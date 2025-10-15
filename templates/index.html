@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+{% block title %}Soccer Data{% endblock %}
+{% block content %}
+<body>
+  
+    <table class="table mx-auto w-75">
+      <form action="{{url_for('search')}}" method="get" >
+        <div class="input-group w-25 mx-auto mb-3 mt-2">
+          <input type="text"  class="form-control form-control-sm" placeholder="Team to search" name="busqueda" aria-label="Team to search">
+          <input type="submit" value="Search" class="btn btn-outline-success btn">
+          <a href="{{url_for('index')}}" class="btn  btn-outline-warning">← Reset</a>
+        </div>
+    </form>
+        <thead>
+          <tr>
+            <th scope="col">Teams</th>
+          </tr>
+        </thead>
+        <tbody>
+        {%if data['teams']%}
+            {%for team in data['teams']%}
+          <tr>
+            <th scope="row">
+                <img src="{{team['crest']}}" alt="" width="15">
+                <a class="team-name" href="{{url_for('team_profile', team_id=team['id'])}}">{{team['name']}}</a>
+            </th>
+            
+          </tr>
+          {%endfor%}
+     
+        {%endif%}
+          
+        </tbody>
+      </table>
+
+      {%if data%}
+      <table class="table mx-auto w-75">
+          <tbody>
+              {%for team in data%}
+              <tr>
+                <th scope="row">
+                    <img src="{{team['crest']}}" alt="" width="15">
+                    <a class="team-name" href="{{url_for('team_profile', team_id=team['id'])}}">{{team['name']}}</a>
+                </th>
+                
+              </tr>
+            {%endfor%}
+            
+          </tbody>
+        </table>
+       {%endif%}
+</body>
+
+{% endblock %}
+</html>

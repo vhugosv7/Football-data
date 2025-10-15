@@ -1,0 +1,158 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+p a, th a{
+    text-decoration: none;
+}
+
+/**Styles**/
+.team-name{
+    text-decoration: none;
+    color: rgb(54, 54, 54);
+}
+
+.team-name:hover{
+    color: rgb(32, 97, 58);
+}
+
+.team-details{
+    background-color:#334155;
+    display: flex;
+    color: white;
+    border-radius: 10px;
+    gap: 6rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+thead{
+    background-color:#334155;
+    color: white;
+}
+
+.thead-team-detail{
+    background-color:#334155;
+    color: white;
+    position: sticky;
+    top: 15rem;
+
+}
+
+
+.team-details .img-soccer{
+    display: flex;
+}
+
+.img-soccer{
+   
+    align-items: center;
+}
+
+
+
+.team-card-title{
+    font-weight: 600;
+    color: white;
+    margin-left: 33px;
+}
+
+
+.team-data{
+    flex: 1;
+    color: white;
+    font-size: 25px;
+}
+
+
+.organize{
+    display: flex;
+    flex-flow: row;
+    gap: 15rem;
+    width: 45%;
+}
+
+
+.player-name-table{
+    color: #334155;
+    font-weight:700;
+}
+
+.player-name-table:hover{
+    color: rgb(62, 131, 125);
+}
+
+.link-info-team{
+    color: rgb(190, 225, 238);
+}
+
+.link-info-team:hover{
+    text-decoration: underline;
+    color: rgb(234, 234, 154);
+}
+
+.card-header, .card-footer tr{
+    color: white;
+}
+
+.card-body{
+    background-color: #33415515;
+}
+
+.container{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+.input-group{
+    gap: 15px;
+
+}
+

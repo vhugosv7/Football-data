@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}{{player_data['name']}} - Information{% endblock %}
+{% block content %}
+<body>
+  
+    <div class="container mt-3 w-50 ">
+        <h2>Player Information</h2>
+        <div class="card w-50 mt-2">
+          <div class="card-header h5 text-center" style="background-color: #334155;">{{player_data['name']}}</div>
+          <div class="card-body ">
+            <table class="table table-bordered">
+                <tr>
+                    <td scope="row">Birthday</td>
+                    <td>{{player_data['dateOfBirth']}}</td>
+                </tr>
+                <tr>
+                    <td scope="row">Age</td>
+                    <td>{{player_data['age']}}</td>
+                </tr>
+                <tr>
+                    <td scope="row">Nationality</td>
+                    <td>{{player_data['nationality']}}</td>
+                </tr>
+                <tr>
+                    <td scope="row">Position</td>
+                    <td>{{player_data['position']}}</td>
+                </tr>
+                <tr>
+                    <td scope="row">Shirt number</td>
+                    <td> {{player_data['shirtNumber']}}</td>
+                </tr>
+            </table>
+          </div> 
+          
+          <div class="card-footer"  style="background-color: #334155;">
+            <table class="table ">
+            <tr>
+                <td scope="row">Current team</td>
+                <td> <img src="{{player_data['currentTeam']['crest']}}" alt="" srcset="" width="25"> {{player_data['currentTeam']['name']}}</td>
+            </tr>
+            </table>
+            </div>
+        </div>
+        <a href="{{url_for('team_profile', team_id=player_data['currentTeam']['id'])}}" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mt-3">← Back</a>
+      </div>
+</body>
+{% endblock %}

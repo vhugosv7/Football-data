@@ -66,7 +66,7 @@ def team_profile(team_id):
         #  Learned here. If user exists, displays main page.
         teams = team_info(team_id)
         df = pd.DataFrame(teams['squad'])
-        print(df)
+
         df_nation = df.groupby('nationality')['nationality'].count()
         df_nation.name = 'count'  # Rename Series
         df_nation = df_nation.reset_index()
@@ -77,8 +77,15 @@ def team_profile(team_id):
         fig = px.pie(df_nation, values='count',
                      names='nationality',
                      hover_name='nationality',
-                     title='Player nationality count',
+                     title=f"{teams['name']}'s player nationality count",
                      color_discrete_sequence=px.colors.sequential.Viridis)
+
+        # Update layout to center title
+        fig.update_layout(
+            title={
+                'x': 0.5,  # Center title
+                'xanchor': 'center'
+                })
 
         #   To get chart as html and display
         plot_html = pio.to_html(fig, full_html=False)
